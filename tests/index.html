@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>テスト</title>
+</head>
+<body>
+  <pre id="out">動かしています…</pre>
+  <script type="module">
+    import { run } from "./runner.js";
+    run(
+      ["./dates.test.js", "./events.test.js", "./store.test.js", "./soccer.test.js"],
+      document.getElementById("out")
+    );
+  </script>
+</body>
+</html>
