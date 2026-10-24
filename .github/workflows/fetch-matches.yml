@@ -1,0 +1,29 @@
+name: fetch-matches
+
+on:
+  schedule:
+    - cron: "0 21 * * *" # 毎日 日本時間 6:00
+  workflow_dispatch: # Actions タブから手動でも動かせる
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: 試合日程を取ってくる
+        run: node scripts/fetch-matches.mjs
+        env:
+          FOOTBALL_DATA_KEY: ${{ secrets.FOOTBALL_DATA_KEY }}
+      - name: 変わっていたら保存する
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/matches.json
+          git diff --cached --quiet || git commit -m "chore: 試合日程を更新"
+          git push
