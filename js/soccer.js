@@ -1,4 +1,6 @@
 // football-data.org の試合データ → カレンダーの予定（日本時間）
+import { minutes } from "./events.js";
+
 const ATLETI_ID = 78;
 const JST_OFFSET_MS = 9 * 60 * 60 * 1000;
 
@@ -74,4 +76,12 @@ export function matchesToEvents(json) {
   return matches
     .filter((m) => m.competition?.code in COMPETITION_JA)
     .map((m) => matchToEvent(m));
+}
+
+// today 以降でいちばん近い試合。無ければ null
+export function nextMatch(soccerEvents, today) {
+  const upcoming = soccerEvents
+    .filter((e) => e.date >= today)
+    .sort((a, b) => a.date.localeCompare(b.date) || minutes(a.start) - minutes(b.start));
+  return upcoming[0] ?? null;
 }

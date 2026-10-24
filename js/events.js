@@ -2,10 +2,10 @@
 import { addDays } from "./dates.js";
 
 export const TYPE_INFO = {
-  baito: { label: "バイト", color: "#2f6fde" },
-  jugyo: { label: "授業", color: "#2e9e5b" },
-  shukatsu: { label: "就活", color: "#e8862a" },
-  soccer: { label: "サッカー", color: "#d6333a" },
+  baito: { label: "バイト", color: "#2b5fd9" },
+  jugyo: { label: "授業", color: "#17936a" },
+  shukatsu: { label: "就活", color: "#e08214" },
+  soccer: { label: "サッカー", color: "#cb3524" },
 };
 
 // from〜to（両端ふくむ）に入る予定。毎週くり返しは1回ずつに分ける
@@ -25,7 +25,7 @@ export function expandEvents(events, from, to) {
 }
 
 // "9:00" → 540。時間未定は一番うしろ
-const minutes = (t) => {
+export const minutes = (t) => {
   if (!t) return Infinity;
   const [h, m] = t.split(":").map(Number);
   return h * 60 + m;

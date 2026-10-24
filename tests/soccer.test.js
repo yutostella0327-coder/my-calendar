@@ -1,5 +1,5 @@
 import { test, assertEqual } from "./runner.js";
-import { matchToEvent, matchesToEvents } from "../js/soccer.js";
+import { matchToEvent, matchesToEvents, nextMatch } from "../js/soccer.js";
 
 const ATLETI = { id: 78, shortName: "Atleti" };
 const BARCA = { id: 81, shortName: "Barça" };
@@ -57,4 +57,25 @@ test("サッカー：ラ・リーガとCL以外は捨てる", () => {
 test("サッカー：データが空でも止まらない", () => {
   assertEqual(matchesToEvents({}), []);
   assertEqual(matchesToEvents(null), []);
+});
+
+const soccerEv = (id, date, start) => ({ id, type: "soccer", title: "vs x（CL）", date, start, end: null, memo: "", repeat: null });
+
+test("次の試合：今日以降でいちばん近い試合", () => {
+  const list = [soccerEv("c", "2026-11-08", null), soccerEv("a", "2026-10-20", "4:00"), soccerEv("b", "2026-10-29", "5:00")];
+  assertEqual(nextMatch(list, "2026-10-24").id, "b");
+});
+
+test("次の試合：今日の試合も入る", () => {
+  assertEqual(nextMatch([soccerEv("a", "2026-10-24", "21:00")], "2026-10-24").id, "a");
+});
+
+test("次の試合：同じ日なら時間の早い方", () => {
+  const list = [soccerEv("late", "2026-10-29", "21:00"), soccerEv("early", "2026-10-29", "5:00")];
+  assertEqual(nextMatch(list, "2026-10-24").id, "early");
+});
+
+test("次の試合：無ければ null", () => {
+  assertEqual(nextMatch([soccerEv("a", "2026-10-01", "4:00")], "2026-10-24"), null);
+  assertEqual(nextMatch([], "2026-10-24"), null);
 });
