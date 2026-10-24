@@ -1,0 +1,227 @@
+:root {
+  --bg: #ffffff;
+  --text: #1c1c1e;
+  --sub: #8e8e93;
+  --line: #e5e5ea;
+  --soft: #f2f2f7;
+  --accent: #1c1c1e;
+  --sun: #d6333a;
+  --sat: #2f6fde;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #000000;
+    --text: #f2f2f7;
+    --sub: #8e8e93;
+    --line: #2c2c2e;
+    --soft: #1c1c1e;
+    --accent: #f2f2f7;
+    --sun: #ff6b6b;
+    --sat: #6ea2ff;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", sans-serif;
+  font-size: 16px;
+  padding: env(safe-area-inset-top) 0 calc(96px + env(safe-area-inset-bottom));
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  min-height: 44px;
+  cursor: pointer;
+}
+
+/* 上のバー */
+.top {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 12px;
+}
+.top h1 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+  min-width: 132px;
+  text-align: center;
+}
+.nav { width: 44px; color: var(--sub); }
+.today-btn {
+  margin-left: auto;
+  padding: 0 14px;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  font-size: 15px;
+}
+
+/* 曜日とマス */
+.weekdays, .grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+.weekdays span {
+  text-align: center;
+  font-size: 12px;
+  color: var(--sub);
+  padding: 4px 0;
+}
+.weekdays .sun { color: var(--sun); }
+.weekdays .sat { color: var(--sat); }
+
+.cell {
+  min-height: 76px;
+  min-width: 0;
+  border-top: 1px solid var(--line);
+  padding: 3px 2px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  align-items: stretch;
+  text-align: left;
+  border-radius: 0;
+}
+.cell .num {
+  align-self: center;
+  font-size: 13px;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  text-align: center;
+  border-radius: 12px;
+}
+.cell.sun .num { color: var(--sun); }
+.cell.sat .num { color: var(--sat); }
+.cell.other { opacity: 0.35; }
+.cell.today .num { background: var(--accent); color: var(--bg); font-weight: 700; }
+.cell.selected { background: var(--soft); }
+
+.bar {
+  font-size: 10px;
+  line-height: 15px;
+  padding: 0 3px;
+  border-radius: 3px;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: clip;
+}
+.more { font-size: 10px; color: var(--sub); padding-left: 3px; }
+
+/* 下の一覧 */
+.day { padding: 8px 16px; border-top: 1px solid var(--line); }
+.day h2 { font-size: 17px; margin: 8px 0; }
+.day-list { list-style: none; margin: 0; padding: 0; }
+.day-list li { border-bottom: 1px solid var(--line); }
+.day-list button, .day-list .static {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  text-align: left;
+}
+.dot { width: 10px; height: 10px; border-radius: 5px; flex: none; }
+.time { width: 112px; flex: none; white-space: nowrap; color: var(--sub); font-size: 15px; font-variant-numeric: tabular-nums; }
+.title { flex: 1; min-width: 0; overflow-wrap: anywhere; }
+.empty { color: var(--sub); padding: 10px 0; }
+.notice { font-size: 13px; color: var(--sub); margin: 4px 0; }
+
+.backup {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  padding: 16px;
+}
+.backup button { font-size: 13px; color: var(--sub); text-decoration: underline; }
+
+/* 追加ボタン */
+.add {
+  position: fixed;
+  right: 20px;
+  bottom: calc(20px + env(safe-area-inset-bottom));
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+  background: var(--accent);
+  color: var(--bg);
+  font-size: 32px;
+  line-height: 1;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+}
+
+/* 下から出るフォーム */
+.sheet {
+  width: 100%;
+  max-width: 520px;
+  margin: auto auto 0;
+  border: 0;
+  border-radius: 16px 16px 0 0;
+  padding: 16px 16px calc(16px + env(safe-area-inset-bottom));
+  background: var(--bg);
+  color: var(--text);
+  max-height: 92vh;
+}
+.sheet::backdrop { background: rgba(0, 0, 0, 0.4); }
+.sheet h2 { margin: 0 0 12px; font-size: 18px; }
+
+.types { display: flex; gap: 8px; margin-bottom: 12px; }
+.types label { flex: 1; }
+.types input { position: absolute; opacity: 0; pointer-events: none; }
+.types span {
+  display: block;
+  text-align: center;
+  padding: 11px 0;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+}
+.types input:checked + span { color: #fff; border-color: transparent; }
+.types input[value="baito"]:checked + span { background: #2f6fde; }
+.types input[value="jugyo"]:checked + span { background: #2e9e5b; }
+.types input[value="shukatsu"]:checked + span { background: #e8862a; }
+.types input:focus-visible + span { outline: 2px solid var(--accent); }
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 13px;
+  color: var(--sub);
+  margin-bottom: 10px;
+  flex: 1;
+  min-width: 0;
+}
+.field input, .field textarea {
+  font: inherit;
+  font-size: 16px;
+  color: var(--text);
+  background: var(--soft);
+  border: 0;
+  border-radius: 10px;
+  padding: 10px 12px;
+  min-height: 44px;
+  width: 100%;
+}
+.row { display: flex; gap: 10px; }
+.repeat { background: var(--soft); border-radius: 10px; padding: 10px 12px 0; margin-bottom: 10px; }
+.repeat .field input { background: var(--bg); }
+.check { display: flex; align-items: center; gap: 8px; min-height: 44px; }
+.check input { width: 20px; height: 20px; }
+.form-error { color: var(--sun); font-size: 14px; margin: 0 0 8px; }
+
+.actions { display: flex; gap: 8px; }
+.actions button { flex: 1; border-radius: 10px; background: var(--soft); }
+.actions .primary { background: var(--accent); color: var(--bg); font-weight: 700; }
+.actions .danger { color: var(--sun); }

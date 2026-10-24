@@ -1,0 +1,8 @@
+{
+  "updatedAt": "仮のデータ（GitHubで自動取得すると置きかわる）",
+  "matches": [
+    { "id": 9001, "utcDate": "2026-10-25T15:15:00Z", "status": "TIMED", "competition": { "code": "PD" }, "homeTeam": { "id": 78, "shortName": "Atleti" }, "awayTeam": { "id": 81, "shortName": "Barça" } },
+    { "id": 9002, "utcDate": "2026-10-28T20:00:00Z", "status": "TIMED", "competition": { "code": "CL" }, "homeTeam": { "id": 5, "shortName": "Bayern" }, "awayTeam": { "id": 78, "shortName": "Atleti" } },
+    { "id": 9003, "utcDate": "2026-11-08T12:00:00Z", "status": "SCHEDULED", "competition": { "code": "PD" }, "homeTeam": { "id": 78, "shortName": "Atleti" }, "awayTeam": { "id": 95, "shortName": "Valencia" } }
+  ]
+}
