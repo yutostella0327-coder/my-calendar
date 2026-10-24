@@ -28,6 +28,9 @@ export const TEAM_JA = {
   "Levante": "レバンテ",
   "Elche": "エルチェ",
   "Real Oviedo": "オビエド",
+  "Deportivo": "デポルティーボ",
+  "Málaga": "マラガ",
+  "Santander": "ラシン・サンタンデール",
   // CL でよく当たるクラブ
   "Bayern": "バイエルン",
   "Dortmund": "ドルトムント",
@@ -44,6 +47,12 @@ export const TEAM_JA = {
   "Napoli": "ナポリ",
   "Benfica": "ベンフィカ",
   "Porto": "ポルト",
+  "Man United": "マンチェスター・ユナイテッド",
+  "Stuttgart": "シュトゥットガルト",
+  "PSV": "PSVアイントホーフェン",
+  "Fenerbahçe": "フェネルバフチェ",
+  "Bodø/Glimt": "ボデ／グリムト",
+  "Viking": "ヴァイキング",
 };
 
 const pad = (n) => String(n).padStart(2, "0");

@@ -1,5 +1,5 @@
 import { test, assertEqual } from "./runner.js";
-import { matchToEvent, matchesToEvents, nextMatch } from "../js/soccer.js";
+import { matchToEvent, matchesToEvents, nextMatch, TEAM_JA } from "../js/soccer.js";
 
 const ATLETI = { id: 78, shortName: "Atleti" };
 const BARCA = { id: 81, shortName: "Barça" };
@@ -78,4 +78,9 @@ test("次の試合：同じ日なら時間の早い方", () => {
 test("次の試合：無ければ null", () => {
   assertEqual(nextMatch([soccerEv("a", "2026-10-01", "4:00")], "2026-10-24"), null);
   assertEqual(nextMatch([], "2026-10-24"), null);
+});
+
+test("サッカー：本物のデータに出てきたチームも日本語になる", () => {
+  const names = ["Bodø/Glimt", "Deportivo", "Fenerbahçe", "Man United", "Málaga", "PSV", "Santander", "Stuttgart", "Viking"];
+  assertEqual(names.filter((n) => !(n in TEAM_JA)), []);
 });
