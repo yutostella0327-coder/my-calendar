@@ -2,10 +2,10 @@
 import { addDays } from "./dates.js";
 
 export const TYPE_INFO = {
-  baito: { label: "バイト", color: "#2b5fd9" },
-  jugyo: { label: "授業", color: "#17936a" },
-  shukatsu: { label: "就活", color: "#e08214" },
-  soccer: { label: "サッカー", color: "#cb3524" },
+  baito: { label: "バイト", color: "#4d7cff" },
+  jugyo: { label: "授業", color: "#2fd0a6" },
+  shukatsu: { label: "就活", color: "#ffc93c" },
+  soccer: { label: "サッカー", color: "#e3402e" },
 };
 
 // from〜to（両端ふくむ）に入る予定。毎週くり返しは1回ずつに分ける

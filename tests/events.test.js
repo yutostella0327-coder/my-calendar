@@ -41,8 +41,8 @@ test("eventsOn：時間の早い順、時間未定は最後", () => {
 });
 
 test("TYPE_INFO：4種類の名前と色", () => {
-  assertEqual(TYPE_INFO.baito, { label: "バイト", color: "#2b5fd9" });
-  assertEqual(TYPE_INFO.jugyo, { label: "授業", color: "#17936a" });
-  assertEqual(TYPE_INFO.shukatsu, { label: "就活", color: "#e08214" });
-  assertEqual(TYPE_INFO.soccer, { label: "サッカー", color: "#cb3524" });
+  assertEqual(TYPE_INFO.baito, { label: "バイト", color: "#4d7cff" });
+  assertEqual(TYPE_INFO.jugyo, { label: "授業", color: "#2fd0a6" });
+  assertEqual(TYPE_INFO.shukatsu, { label: "就活", color: "#ffc93c" });
+  assertEqual(TYPE_INFO.soccer, { label: "サッカー", color: "#e3402e" });
 });

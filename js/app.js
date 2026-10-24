@@ -67,7 +67,6 @@ function render() {
       cell.append(num);
 
       const list = eventsOn(all, date);
-      if (list.some((e) => e.type === "soccer")) cell.classList.add("match");
       for (const ev of list.slice(0, MAX_BARS)) {
         const bar = document.createElement("span");
         bar.className = "bar";
