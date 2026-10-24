@@ -2,7 +2,7 @@
 import { monthGrid, toDateStr, parseDateStr } from "./dates.js";
 import { expandEvents, eventsOn, TYPE_INFO } from "./events.js";
 import { loadEvents, saveEvents, exportJson, importJson, newId } from "./store.js";
-import { matchesToEvents } from "./soccer.js";
+import { matchesToEvents, nextMatch } from "./soccer.js";
 
 const $ = (id) => document.getElementById(id);
 const MAX_BARS = 3;
@@ -39,7 +39,14 @@ function render() {
   const all = expandEvents([...state.mine, ...state.soccer], from, to);
   const thisMonth = `${state.year}-${String(state.month).padStart(2, "0")}`;
 
-  $("month-label").textContent = `${state.year}年${state.month}月`;
+  $("year").textContent = state.year;
+  const num = $("month-num");
+  if (num.textContent !== String(state.month)) {
+    num.textContent = state.month;
+    num.classList.remove("swap");
+    void num.offsetWidth; // アニメーションをやり直すため
+    num.classList.add("swap");
+  }
 
   const grid = $("grid");
   grid.replaceChildren();
@@ -60,11 +67,13 @@ function render() {
       cell.append(num);
 
       const list = eventsOn(all, date);
+      if (list.some((e) => e.type === "soccer")) cell.classList.add("match");
       for (const ev of list.slice(0, MAX_BARS)) {
         const bar = document.createElement("span");
         bar.className = "bar";
         bar.style.background = TYPE_INFO[ev.type].color;
-        bar.textContent = ev.title;
+        // マスは細いので、試合は大会名をはずして短く
+        bar.textContent = ev.type === "soccer" ? ev.title.replace(/（.*）$/, "") : ev.title;
         cell.append(bar);
       }
       if (list.length > MAX_BARS) {
@@ -83,6 +92,26 @@ function render() {
   }
 
   renderDay(all);
+  renderNextMatch();
+}
+
+function renderNextMatch() {
+  const ev = nextMatch(state.soccer, today);
+  const box = $("next-match");
+  box.hidden = !ev;
+  if (!ev) return;
+  const d = parseDateStr(ev.date);
+  const m = ev.title.match(/^(.*)（(.*)）$/);
+  $("nm-title").textContent = m ? m[1] : ev.title;
+  $("nm-when").textContent = `${d.getMonth() + 1}/${d.getDate()}（${WEEKDAY[d.getDay()]}）${ev.start ?? "時間未定"}`;
+  $("nm-comp").textContent = m ? m[2] : "";
+}
+
+function jumpTo(date) {
+  state.year = Number(date.slice(0, 4));
+  state.month = Number(date.slice(5, 7));
+  state.selected = date;
+  render();
 }
 
 function renderDay(all) {
@@ -251,11 +280,10 @@ $("import-file").addEventListener("change", async (e) => {
 
 $("prev").addEventListener("click", () => moveMonth(-1));
 $("next").addEventListener("click", () => moveMonth(1));
-$("today").addEventListener("click", () => {
-  state.year = Number(today.slice(0, 4));
-  state.month = Number(today.slice(5, 7));
-  state.selected = today;
-  render();
+$("today").addEventListener("click", () => jumpTo(today));
+$("next-match").addEventListener("click", () => {
+  const ev = nextMatch(state.soccer, today);
+  if (ev) jumpTo(ev.date);
 });
 $("add").addEventListener("click", () => openForm());
 

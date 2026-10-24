@@ -1,25 +1,30 @@
+/* アトレティコの紺と赤白をもとにした見た目 */
 :root {
-  --bg: #ffffff;
-  --text: #1c1c1e;
-  --sub: #8e8e93;
-  --line: #e5e5ea;
-  --soft: #f2f2f7;
-  --accent: #1c1c1e;
-  --sun: #d6333a;
-  --sat: #2f6fde;
+  --ink: #1b2152;        /* 紺：文字・ボタン */
+  --ink-soft: #5d6390;   /* 紺の薄い版：補足の文字 */
+  --paper: #ffffff;      /* 背景 */
+  --mist: #f1f2f6;       /* 薄いグレー：入力欄・選択中 */
+  --rule: #e2e4ee;       /* 線 */
+  --red: #cb3524;        /* アトレティコの赤 */
+  --sat: #2b5fd9;
+  --on-ink: #ffffff;     /* 紺の上の文字 */
+  --stripe: rgba(203, 53, 36, 0.09);
+  --display: "Dela Gothic One", "Hiragino Sans", sans-serif;
+  --body: "Zen Kaku Gothic New", -apple-system, "Hiragino Sans", sans-serif;
   color-scheme: light dark;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #000000;
-    --text: #f2f2f7;
-    --sub: #8e8e93;
-    --line: #2c2c2e;
-    --soft: #1c1c1e;
-    --accent: #f2f2f7;
-    --sun: #ff6b6b;
-    --sat: #6ea2ff;
+    --ink: #eef0fa;
+    --ink-soft: #9aa0c8;
+    --paper: #0d1030;
+    --mist: #181c45;
+    --rule: #242959;
+    --red: #ff5a47;
+    --sat: #7aa0ff;
+    --on-ink: #0d1030;
+    --stripe: rgba(255, 90, 71, 0.13);
   }
 }
 
@@ -27,11 +32,12 @@
 
 body {
   margin: 0;
-  background: var(--bg);
-  color: var(--text);
-  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--body);
   font-size: 16px;
-  padding: env(safe-area-inset-top) 0 calc(96px + env(safe-area-inset-bottom));
+  line-height: 1.5;
+  padding: env(safe-area-inset-top) 0 calc(104px + env(safe-area-inset-bottom));
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -40,165 +46,230 @@ button {
   color: inherit;
   background: none;
   border: 0;
+  padding: 0;
   min-height: 44px;
   cursor: pointer;
 }
+button:focus-visible, input:focus-visible, textarea:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: 2px;
+}
 
-/* 上のバー */
+/* ---------- 上：大きい月 ---------- */
 .top {
   display: flex;
-  align-items: center;
-  gap: 4px;
-  padding: 8px 12px;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 14px 16px 6px;
 }
-.top h1 {
-  margin: 0;
-  font-size: 22px;
-  font-weight: 700;
-  min-width: 132px;
-  text-align: center;
-}
-.nav { width: 44px; color: var(--sub); }
-.today-btn {
-  margin-left: auto;
-  padding: 0 14px;
-  border: 1px solid var(--line);
-  border-radius: 22px;
+.month { margin: 0; font-weight: 400; }
+.year {
+  display: block;
   font-size: 15px;
+  font-weight: 700;
+  color: var(--ink-soft);
+  letter-spacing: 0.04em;
+}
+.month-row { display: flex; align-items: baseline; gap: 4px; }
+.month-num {
+  font-family: var(--display);
+  font-size: 88px;
+  line-height: 0.92;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+}
+.month-unit { font-family: var(--display); font-size: 24px; }
+.month-num.swap { animation: swap 260ms cubic-bezier(0.2, 0.7, 0.2, 1); }
+@keyframes swap {
+  from { opacity: 0; transform: translateY(10px); }
 }
 
-/* 曜日とマス */
+.nav-group { display: flex; align-items: center; gap: 2px; padding-top: 4px; }
+.nav { width: 44px; display: grid; place-items: center; color: var(--ink); }
+.nav svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+.today-btn {
+  margin-left: 6px;
+  padding: 0 16px;
+  border-radius: 22px;
+  background: var(--ink);
+  color: var(--on-ink);
+  font-weight: 700;
+  font-size: 14px;
+}
+
+/* ---------- 次の試合 ---------- */
+.next-match {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: calc(100% - 32px);
+  margin: 6px 16px 12px;
+  padding: 8px 12px 8px 0;
+  text-align: left;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  border-radius: 0;
+}
+.next-match[hidden] { display: none; }
+.stripes {
+  flex: none;
+  width: 22px;
+  height: 36px;
+  background: repeating-linear-gradient(90deg, var(--red) 0 4.4px, transparent 4.4px 8.8px);
+  border-radius: 2px;
+}
+.nm-main, .nm-side { display: flex; flex-direction: column; line-height: 1.35; }
+.nm-main { flex: 1; min-width: 0; }
+.nm-side { flex: none; align-items: flex-end; }
+.nm-label, .nm-comp { font-size: 12px; color: var(--ink-soft); }
+.nm-title { font-weight: 700; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.nm-when { font-size: 15px; font-weight: 700; font-variant-numeric: tabular-nums; }
+
+/* ---------- 曜日とマス ---------- */
 .weekdays, .grid {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  padding: 0 4px;
 }
 .weekdays span {
   text-align: center;
   font-size: 12px;
-  color: var(--sub);
-  padding: 4px 0;
+  font-weight: 500;
+  color: var(--ink-soft);
+  padding-bottom: 4px;
 }
-.weekdays .sun { color: var(--sun); }
+.weekdays .sun { color: var(--red); }
 .weekdays .sat { color: var(--sat); }
 
 .cell {
-  min-height: 76px;
-  min-width: 0;
-  border-top: 1px solid var(--line);
-  padding: 3px 2px;
+  min-height: 78px;
+  border-top: 1px solid var(--rule);
+  padding: 4px 2px 3px;
   display: flex;
   flex-direction: column;
   gap: 2px;
   align-items: stretch;
   text-align: left;
   border-radius: 0;
+  position: relative;
 }
+/* 試合の日は赤白のしま */
+.cell.match {
+  background: repeating-linear-gradient(90deg, var(--stripe) 0 7px, transparent 7px 14px);
+}
+.cell.selected { box-shadow: inset 0 0 0 2px var(--ink); border-radius: 6px; }
 .cell .num {
   align-self: center;
   font-size: 13px;
-  width: 24px;
-  height: 24px;
-  line-height: 24px;
+  font-weight: 500;
+  width: 26px;
+  height: 26px;
+  line-height: 26px;
   text-align: center;
-  border-radius: 12px;
+  border-radius: 13px;
+  font-variant-numeric: tabular-nums;
 }
-.cell.sun .num { color: var(--sun); }
+.cell.sun .num { color: var(--red); }
 .cell.sat .num { color: var(--sat); }
-.cell.other { opacity: 0.35; }
-.cell.today .num { background: var(--accent); color: var(--bg); font-weight: 700; }
-.cell.selected { background: var(--soft); }
+.cell.other > * { opacity: 0.32; }
+.cell.today .num { background: var(--ink); color: var(--on-ink); font-weight: 700; }
 
 .bar {
   font-size: 10px;
-  line-height: 15px;
+  font-weight: 700;
+  line-height: 16px;
   padding: 0 3px;
   border-radius: 3px;
   color: #fff;
   white-space: nowrap;
   overflow: hidden;
-  text-overflow: clip;
 }
-.more { font-size: 10px; color: var(--sub); padding-left: 3px; }
+.more { font-size: 10px; font-weight: 700; color: var(--ink-soft); padding-left: 3px; }
 
-/* 下の一覧 */
-.day { padding: 8px 16px; border-top: 1px solid var(--line); }
-.day h2 { font-size: 17px; margin: 8px 0; }
+/* ---------- その日の予定 ---------- */
+.day { padding: 18px 16px 4px; }
+.day h2 { font-size: 18px; font-weight: 700; margin: 0 0 6px; }
 .day-list { list-style: none; margin: 0; padding: 0; }
-.day-list li { border-bottom: 1px solid var(--line); }
+.day-list li { border-bottom: 1px solid var(--rule); }
 .day-list button, .day-list .static {
   width: 100%;
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 10px 0;
+  gap: 12px;
+  padding: 12px 0;
   text-align: left;
 }
-.dot { width: 10px; height: 10px; border-radius: 5px; flex: none; }
-.time { width: 112px; flex: none; white-space: nowrap; color: var(--sub); font-size: 15px; font-variant-numeric: tabular-nums; }
-.title { flex: 1; min-width: 0; overflow-wrap: anywhere; }
-.empty { color: var(--sub); padding: 10px 0; }
-.notice { font-size: 13px; color: var(--sub); margin: 4px 0; }
+.dot { width: 4px; align-self: stretch; border-radius: 2px; flex: none; }
+.time { width: 108px; flex: none; color: var(--ink-soft); font-size: 15px; font-weight: 500; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.title { flex: 1; min-width: 0; font-weight: 500; overflow-wrap: anywhere; }
+.empty { color: var(--ink-soft); padding: 12px 0; border-bottom: 0 !important; }
+.notice { font-size: 13px; color: var(--red); margin: 0 0 8px; }
 
 .backup {
   display: flex;
   justify-content: center;
-  gap: 16px;
-  padding: 16px;
+  gap: 20px;
+  padding: 20px 16px;
 }
-.backup button { font-size: 13px; color: var(--sub); text-decoration: underline; }
+.backup button { font-size: 13px; color: var(--ink-soft); text-decoration: underline; text-underline-offset: 3px; }
 
-/* 追加ボタン */
+/* ---------- 追加ボタン ---------- */
 .add {
   position: fixed;
   right: 20px;
   bottom: calc(20px + env(safe-area-inset-bottom));
-  width: 60px;
-  height: 60px;
-  border-radius: 30px;
-  background: var(--accent);
-  color: var(--bg);
-  font-size: 32px;
-  line-height: 1;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  width: 62px;
+  height: 62px;
+  border-radius: 31px;
+  background: var(--ink);
+  color: var(--on-ink);
+  display: grid;
+  place-items: center;
+  box-shadow: 0 6px 18px rgba(27, 33, 82, 0.32);
 }
+.add svg { width: 26px; height: 26px; stroke: currentColor; stroke-width: 2.6; stroke-linecap: round; }
 
-/* 下から出るフォーム */
+/* ---------- 下から出るフォーム ---------- */
 .sheet {
   width: 100%;
   max-width: 520px;
   margin: auto auto 0;
   border: 0;
-  border-radius: 16px 16px 0 0;
-  padding: 16px 16px calc(16px + env(safe-area-inset-bottom));
-  background: var(--bg);
-  color: var(--text);
+  border-radius: 20px 20px 0 0;
+  padding: 20px 16px calc(16px + env(safe-area-inset-bottom));
+  background: var(--paper);
+  color: var(--ink);
   max-height: 92vh;
 }
-.sheet::backdrop { background: rgba(0, 0, 0, 0.4); }
-.sheet h2 { margin: 0 0 12px; font-size: 18px; }
+.sheet[open] { animation: rise 220ms cubic-bezier(0.2, 0.7, 0.2, 1); }
+@keyframes rise { from { transform: translateY(40px); opacity: 0; } }
+.sheet::backdrop { background: rgba(13, 16, 48, 0.45); }
+.sheet h2 { margin: 0 0 14px; font-family: var(--display); font-weight: 400; font-size: 22px; }
 
-.types { display: flex; gap: 8px; margin-bottom: 12px; }
+.types { display: flex; gap: 8px; margin-bottom: 14px; }
 .types label { flex: 1; }
 .types input { position: absolute; opacity: 0; pointer-events: none; }
 .types span {
   display: block;
   text-align: center;
-  padding: 11px 0;
+  padding: 10px 0;
   border-radius: 10px;
-  border: 1px solid var(--line);
+  border: 1.5px solid var(--rule);
+  font-weight: 700;
 }
 .types input:checked + span { color: #fff; border-color: transparent; }
-.types input[value="baito"]:checked + span { background: #2f6fde; }
-.types input[value="jugyo"]:checked + span { background: #2e9e5b; }
-.types input[value="shukatsu"]:checked + span { background: #e8862a; }
-.types input:focus-visible + span { outline: 2px solid var(--accent); }
+.types input[value="baito"]:checked + span { background: #2b5fd9; }
+.types input[value="jugyo"]:checked + span { background: #17936a; }
+.types input[value="shukatsu"]:checked + span { background: #e08214; }
+.types input:focus-visible + span { outline: 2px solid var(--red); outline-offset: 2px; }
 
 .field {
   display: flex;
   flex-direction: column;
   gap: 4px;
   font-size: 13px;
-  color: var(--sub);
+  font-weight: 500;
+  color: var(--ink-soft);
   margin-bottom: 10px;
   flex: 1;
   min-width: 0;
@@ -206,8 +277,9 @@ button {
 .field input, .field textarea {
   font: inherit;
   font-size: 16px;
-  color: var(--text);
-  background: var(--soft);
+  font-weight: 400;
+  color: var(--ink);
+  background: var(--mist);
   border: 0;
   border-radius: 10px;
   padding: 10px 12px;
@@ -215,13 +287,18 @@ button {
   width: 100%;
 }
 .row { display: flex; gap: 10px; }
-.repeat { background: var(--soft); border-radius: 10px; padding: 10px 12px 0; margin-bottom: 10px; }
-.repeat .field input { background: var(--bg); }
-.check { display: flex; align-items: center; gap: 8px; min-height: 44px; }
-.check input { width: 20px; height: 20px; }
-.form-error { color: var(--sun); font-size: 14px; margin: 0 0 8px; }
+.repeat { background: var(--mist); border-radius: 12px; padding: 4px 12px 2px; margin-bottom: 10px; }
+.repeat[hidden] { display: none; }
+.repeat .field input { background: var(--paper); }
+.check { display: flex; align-items: center; gap: 8px; min-height: 44px; font-weight: 500; }
+.check input { width: 20px; height: 20px; accent-color: var(--ink); }
+.form-error { color: var(--red); font-size: 14px; font-weight: 500; margin: 0 0 8px; }
 
-.actions { display: flex; gap: 8px; }
-.actions button { flex: 1; border-radius: 10px; background: var(--soft); }
-.actions .primary { background: var(--accent); color: var(--bg); font-weight: 700; }
-.actions .danger { color: var(--sun); }
+.actions { display: flex; gap: 8px; margin-top: 4px; }
+.actions button { flex: 1; border-radius: 12px; background: var(--mist); font-weight: 700; }
+.actions .primary { background: var(--ink); color: var(--on-ink); }
+.actions .danger { color: var(--red); }
+
+@media (prefers-reduced-motion: reduce) {
+  .month-num.swap, .sheet[open] { animation: none; }
+}
