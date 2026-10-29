@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-28T21:29:55.684Z",
+  "updatedAt": "2026-10-29T21:31:41.714Z",
   "matches": [
     {
       "area": {
@@ -19,7 +19,7 @@
         "id": 2518,
         "startDate": "2026-08-16",
         "endDate": "2027-05-30",
-        "currentMatchday": 10,
+        "currentMatchday": 11,
         "winner": null
       },
       "id": 564699,
@@ -28,7 +28,7 @@
       "matchday": 8,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-10-28T20:20:27Z",
+      "lastUpdated": "2026-10-29T20:20:28Z",
       "homeTeam": {
         "id": 263,
         "name": "Deportivo Alavés",
@@ -94,7 +94,7 @@
       "matchday": 2,
       "stage": "LEAGUE_STAGE",
       "group": null,
-      "lastUpdated": "2026-10-28T20:20:27Z",
+      "lastUpdated": "2026-10-29T20:20:28Z",
       "homeTeam": {
         "id": 78,
         "name": "Club Atlético de Madrid",
@@ -151,7 +151,7 @@
         "id": 2518,
         "startDate": "2026-08-16",
         "endDate": "2027-05-30",
-        "currentMatchday": 10,
+        "currentMatchday": 11,
         "winner": null
       },
       "id": 564710,
@@ -160,7 +160,7 @@
       "matchday": 9,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-10-28T20:20:27Z",
+      "lastUpdated": "2026-10-29T20:20:28Z",
       "homeTeam": {
         "id": 80,
         "name": "RCD Espanyol de Barcelona",
@@ -226,7 +226,7 @@
       "matchday": 3,
       "stage": "LEAGUE_STAGE",
       "group": null,
-      "lastUpdated": "2026-10-28T20:20:27Z",
+      "lastUpdated": "2026-10-29T20:20:28Z",
       "homeTeam": {
         "id": 10,
         "name": "VfB Stuttgart",
@@ -283,7 +283,7 @@
         "id": 2518,
         "startDate": "2026-08-16",
         "endDate": "2027-05-30",
-        "currentMatchday": 10,
+        "currentMatchday": 11,
         "winner": null
       },
       "id": 564724,
@@ -292,7 +292,7 @@
       "matchday": 10,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-10-28T20:20:27Z",
+      "lastUpdated": "2026-10-29T20:20:29Z",
       "homeTeam": {
         "id": 78,
         "name": "Club Atlético de Madrid",
@@ -349,7 +349,7 @@
         "id": 2518,
         "startDate": "2026-08-16",
         "endDate": "2027-05-30",
-        "currentMatchday": 10,
+        "currentMatchday": 11,
         "winner": null
       },
       "id": 564730,
@@ -358,7 +358,7 @@
       "matchday": 11,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-10-28T20:20:27Z",
+      "lastUpdated": "2026-10-29T20:20:29Z",
       "homeTeam": {
         "id": 88,
         "name": "Levante UD",
@@ -417,7 +417,7 @@
       "matchday": 4,
       "stage": "LEAGUE_STAGE",
       "group": null,
-      "lastUpdated": "2026-10-28T20:20:27Z",
+      "lastUpdated": "2026-10-29T20:20:28Z",
       "homeTeam": {
         "id": 78,
         "name": "Club Atlético de Madrid",
@@ -467,7 +467,7 @@
         "id": 2518,
         "startDate": "2026-08-16",
         "endDate": "2027-05-30",
-        "currentMatchday": 10,
+        "currentMatchday": 11,
         "winner": null
       },
       "id": 564746,
@@ -476,7 +476,7 @@
       "matchday": 12,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-10-28T20:20:27Z",
+      "lastUpdated": "2026-10-29T20:20:29Z",
       "homeTeam": {
         "id": 78,
         "name": "Club Atlético de Madrid",
@@ -526,7 +526,7 @@
         "id": 2518,
         "startDate": "2026-08-16",
         "endDate": "2027-05-30",
-        "currentMatchday": 10,
+        "currentMatchday": 11,
         "winner": null
       },
       "id": 564753,
@@ -535,7 +535,7 @@
       "matchday": 13,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-10-28T20:20:27Z",
+      "lastUpdated": "2026-10-29T20:20:29Z",
       "homeTeam": {
         "id": 82,
         "name": "Getafe CF",
@@ -594,7 +594,7 @@
       "matchday": 5,
       "stage": "LEAGUE_STAGE",
       "group": null,
-      "lastUpdated": "2026-10-28T20:20:27Z",
+      "lastUpdated": "2026-10-29T20:20:28Z",
       "homeTeam": {
         "id": 78,
         "name": "Club Atlético de Madrid",
@@ -644,7 +644,7 @@
         "id": 2518,
         "startDate": "2026-08-16",
         "endDate": "2027-05-30",
-        "currentMatchday": 10,
+        "currentMatchday": 11,
         "winner": null
       },
       "id": 564759,
@@ -653,7 +653,7 @@
       "matchday": 14,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-10-28T20:20:27Z",
+      "lastUpdated": "2026-10-29T20:20:29Z",
       "homeTeam": {
         "id": 285,
         "name": "Elche CF",
@@ -703,7 +703,7 @@
         "id": 2518,
         "startDate": "2026-08-16",
         "endDate": "2027-05-30",
-        "currentMatchday": 10,
+        "currentMatchday": 11,
         "winner": null
       },
       "id": 564771,
@@ -712,7 +712,7 @@
       "matchday": 15,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-10-28T20:20:27Z",
+      "lastUpdated": "2026-10-29T20:20:29Z",
       "homeTeam": {
         "id": 78,
         "name": "Club Atlético de Madrid",
@@ -771,7 +771,7 @@
       "matchday": 6,
       "stage": "LEAGUE_STAGE",
       "group": null,
-      "lastUpdated": "2026-10-28T20:20:27Z",
+      "lastUpdated": "2026-10-29T20:20:28Z",
       "homeTeam": {
         "id": 674,
         "name": "PSV",
@@ -821,7 +821,7 @@
         "id": 2518,
         "startDate": "2026-08-16",
         "endDate": "2027-05-30",
-        "currentMatchday": 10,
+        "currentMatchday": 11,
         "winner": null
       },
       "id": 564787,
@@ -830,7 +830,7 @@
       "matchday": 16,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-10-28T20:20:27Z",
+      "lastUpdated": "2026-10-29T20:20:29Z",
       "homeTeam": {
         "id": 78,
         "name": "Club Atlético de Madrid",
@@ -880,7 +880,7 @@
         "id": 2518,
         "startDate": "2026-08-16",
         "endDate": "2027-05-30",
-        "currentMatchday": 10,
+        "currentMatchday": 11,
         "winner": null
       },
       "id": 564794,
@@ -889,7 +889,7 @@
       "matchday": 17,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-10-28T20:20:27Z",
+      "lastUpdated": "2026-10-29T20:20:29Z",
       "homeTeam": {
         "id": 558,
         "name": "RC Celta de Vigo",
@@ -939,7 +939,7 @@
         "id": 2518,
         "startDate": "2026-08-16",
         "endDate": "2027-05-30",
-        "currentMatchday": 10,
+        "currentMatchday": 11,
         "winner": null
       },
       "id": 564807,
@@ -948,7 +948,7 @@
       "matchday": 18,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-10-28T20:20:27Z",
+      "lastUpdated": "2026-10-29T20:20:29Z",
       "homeTeam": {
         "id": 87,
         "name": "Rayo Vallecano de Madrid",
@@ -998,7 +998,7 @@
         "id": 2518,
         "startDate": "2026-08-16",
         "endDate": "2027-05-30",
-        "currentMatchday": 10,
+        "currentMatchday": 11,
         "winner": null
       },
       "id": 564813,
@@ -1007,7 +1007,7 @@
       "matchday": 19,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-10-28T20:20:27Z",
+      "lastUpdated": "2026-10-29T20:20:29Z",
       "homeTeam": {
         "id": 78,
         "name": "Club Atlético de Madrid",
@@ -1057,7 +1057,7 @@
         "id": 2518,
         "startDate": "2026-08-16",
         "endDate": "2027-05-30",
-        "currentMatchday": 10,
+        "currentMatchday": 11,
         "winner": null
       },
       "id": 564827,
@@ -1066,7 +1066,7 @@
       "matchday": 20,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-10-28T20:20:27Z",
+      "lastUpdated": "2026-10-29T20:20:29Z",
       "homeTeam": {
         "id": 78,
         "name": "Club Atlético de Madrid",
@@ -1125,7 +1125,7 @@
       "matchday": 7,
       "stage": "LEAGUE_STAGE",
       "group": null,
-      "lastUpdated": "2026-10-28T20:20:27Z",
+      "lastUpdated": "2026-10-29T20:20:28Z",
       "homeTeam": {
         "id": 5721,
         "name": "FK Bodø/Glimt",
@@ -1175,7 +1175,7 @@
         "id": 2518,
         "startDate": "2026-08-16",
         "endDate": "2027-05-30",
-        "currentMatchday": 10,
+        "currentMatchday": 11,
         "winner": null
       },
       "id": 564837,
@@ -1184,7 +1184,7 @@
       "matchday": 21,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-10-28T20:20:27Z",
+      "lastUpdated": "2026-10-29T20:20:29Z",
       "homeTeam": {
         "id": 560,
         "name": "RC Deportivo La Coruña",
@@ -1243,7 +1243,7 @@
       "matchday": 8,
       "stage": "LEAGUE_STAGE",
       "group": null,
-      "lastUpdated": "2026-10-28T20:20:27Z",
+      "lastUpdated": "2026-10-29T20:20:28Z",
       "homeTeam": {
         "id": 78,
         "name": "Club Atlético de Madrid",
@@ -1293,7 +1293,7 @@
         "id": 2518,
         "startDate": "2026-08-16",
         "endDate": "2027-05-30",
-        "currentMatchday": 10,
+        "currentMatchday": 11,
         "winner": null
       },
       "id": 564840,
@@ -1302,7 +1302,7 @@
       "matchday": 22,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-10-28T20:20:27Z",
+      "lastUpdated": "2026-10-29T20:20:29Z",
       "homeTeam": {
         "id": 78,
         "name": "Club Atlético de Madrid",
@@ -1352,7 +1352,7 @@
         "id": 2518,
         "startDate": "2026-08-16",
         "endDate": "2027-05-30",
-        "currentMatchday": 10,
+        "currentMatchday": 11,
         "winner": null
       },
       "id": 564857,
@@ -1361,7 +1361,7 @@
       "matchday": 23,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-10-28T20:20:27Z",
+      "lastUpdated": "2026-10-29T20:20:29Z",
       "homeTeam": {
         "id": 81,
         "name": "FC Barcelona",
@@ -1411,7 +1411,7 @@
         "id": 2518,
         "startDate": "2026-08-16",
         "endDate": "2027-05-30",
-        "currentMatchday": 10,
+        "currentMatchday": 11,
         "winner": null
       },
       "id": 564859,
@@ -1420,7 +1420,7 @@
       "matchday": 24,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-10-28T20:20:27Z",
+      "lastUpdated": "2026-10-29T20:20:29Z",
       "homeTeam": {
         "id": 79,
         "name": "CA Osasuna",
@@ -1470,7 +1470,7 @@
         "id": 2518,
         "startDate": "2026-08-16",
         "endDate": "2027-05-30",
-        "currentMatchday": 10,
+        "currentMatchday": 11,
         "winner": null
       },
       "id": 564875,
@@ -1479,7 +1479,7 @@
       "matchday": 25,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-10-28T20:20:27Z",
+      "lastUpdated": "2026-10-29T20:20:29Z",
       "homeTeam": {
         "id": 78,
         "name": "Club Atlético de Madrid",
@@ -1529,7 +1529,7 @@
         "id": 2518,
         "startDate": "2026-08-16",
         "endDate": "2027-05-30",
-        "currentMatchday": 10,
+        "currentMatchday": 11,
         "winner": null
       },
       "id": 564880,
@@ -1538,7 +1538,7 @@
       "matchday": 26,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-10-28T20:20:27Z",
+      "lastUpdated": "2026-10-29T20:20:29Z",
       "homeTeam": {
         "id": 84,
         "name": "Málaga CF",
@@ -1588,7 +1588,7 @@
         "id": 2518,
         "startDate": "2026-08-16",
         "endDate": "2027-05-30",
-        "currentMatchday": 10,
+        "currentMatchday": 11,
         "winner": null
       },
       "id": 564893,
@@ -1597,7 +1597,7 @@
       "matchday": 27,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-10-28T20:20:27Z",
+      "lastUpdated": "2026-10-29T20:20:29Z",
       "homeTeam": {
         "id": 78,
         "name": "Club Atlético de Madrid",
@@ -1647,7 +1647,7 @@
         "id": 2518,
         "startDate": "2026-08-16",
         "endDate": "2027-05-30",
-        "currentMatchday": 10,
+        "currentMatchday": 11,
         "winner": null
       },
       "id": 564903,
@@ -1656,7 +1656,7 @@
       "matchday": 28,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-10-28T20:20:27Z",
+      "lastUpdated": "2026-10-29T20:20:29Z",
       "homeTeam": {
         "id": 5335,
         "name": "Real Racing Club de Santander",
@@ -1706,7 +1706,7 @@
         "id": 2518,
         "startDate": "2026-08-16",
         "endDate": "2027-05-30",
-        "currentMatchday": 10,
+        "currentMatchday": 11,
         "winner": null
       },
       "id": 564917,
@@ -1715,7 +1715,7 @@
       "matchday": 29,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-10-28T20:20:27Z",
+      "lastUpdated": "2026-10-29T20:20:29Z",
       "homeTeam": {
         "id": 78,
         "name": "Club Atlético de Madrid",
@@ -1765,7 +1765,7 @@
         "id": 2518,
         "startDate": "2026-08-16",
         "endDate": "2027-05-30",
-        "currentMatchday": 10,
+        "currentMatchday": 11,
         "winner": null
       },
       "id": 564925,
@@ -1774,7 +1774,7 @@
       "matchday": 30,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-10-28T20:20:27Z",
+      "lastUpdated": "2026-10-29T20:20:29Z",
       "homeTeam": {
         "id": 86,
         "name": "Real Madrid CF",
@@ -1824,7 +1824,7 @@
         "id": 2518,
         "startDate": "2026-08-16",
         "endDate": "2027-05-30",
-        "currentMatchday": 10,
+        "currentMatchday": 11,
         "winner": null
       },
       "id": 564937,
@@ -1833,7 +1833,7 @@
       "matchday": 31,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-10-28T20:20:27Z",
+      "lastUpdated": "2026-10-29T20:20:29Z",
       "homeTeam": {
         "id": 78,
         "name": "Club Atlético de Madrid",
@@ -1883,7 +1883,7 @@
         "id": 2518,
         "startDate": "2026-08-16",
         "endDate": "2027-05-30",
-        "currentMatchday": 10,
+        "currentMatchday": 11,
         "winner": null
       },
       "id": 564938,
@@ -1892,7 +1892,7 @@
       "matchday": 32,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-10-28T20:20:27Z",
+      "lastUpdated": "2026-10-29T20:20:29Z",
       "homeTeam": {
         "id": 78,
         "name": "Club Atlético de Madrid",
@@ -1942,7 +1942,7 @@
         "id": 2518,
         "startDate": "2026-08-16",
         "endDate": "2027-05-30",
-        "currentMatchday": 10,
+        "currentMatchday": 11,
         "winner": null
       },
       "id": 564955,
@@ -1951,7 +1951,7 @@
       "matchday": 33,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-10-28T20:20:27Z",
+      "lastUpdated": "2026-10-29T20:20:29Z",
       "homeTeam": {
         "id": 94,
         "name": "Villarreal CF",
